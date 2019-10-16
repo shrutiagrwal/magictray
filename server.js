@@ -14,16 +14,7 @@ mongoose.connect(process.env.database)
     .catch(err => console.error("couldnt connected to database...", err))
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://shrutiagarwal:shruti@magic-tray-ch4fm.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//     const collection = client.db("test").collection("devices");
-//     // perform actions on the collection object
-//     client.close();
-//     if (err)
-//         console.log(err);
-// });
+
 
 
 app.listen(process.env.PORT || 3000, (err) => {
