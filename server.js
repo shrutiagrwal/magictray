@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 app.use(express.urlencoded())
+require('dotenv').config();
 app.set('views', './views');
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 const form = require('./routes/form');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://shrutiagarwal:shruti@magic-tray-ch4fm.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect(process.env.database)
     .then(() => console.log("database connected.."))
     .catch(err => console.error("couldnt connected to database...", err))
 
